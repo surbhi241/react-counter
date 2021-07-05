@@ -26,7 +26,7 @@ export const AddIcon = (props) => {
  );
 }
 
-export const DeleteIcon = (props) => {
+export const SubtractIcon = (props) => {
     const { color } = props;
     return(
         <svg width="16" height="17" viewBox="0 0 16 17">
