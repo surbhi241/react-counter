@@ -10,7 +10,7 @@
   color: #A54946;
   /* border-radius: 4px; */
   background: #F8E9E9;
-  width:auto;
+  width: 50px;
   padding: 15px;
   display: inline-flex;
   justify-content: center;
@@ -51,8 +51,23 @@ input:focus-visible {
 button:disabled {
   cursor: no-drop;
 }
+.svgIcons {
+  fill: #A54946;
+}
+.btn-count-left:active .svgIcons {
+  fill: #FFF;
+}
 
-button:active{
+.btn-count-left:active { 
+  background: #A54946;
+  color: #FFF;
+}
+
+.btn-count-right:active .svgIcons {
+  fill: #FFF;
+}
+
+.btn-count-right:active { 
   background: #A54946;
   color: #FFF;
 }
