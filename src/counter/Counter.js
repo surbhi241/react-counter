@@ -5,7 +5,8 @@ const Counter = ({maxCount = 1000, initial = 1}) => {
     const [isError, setError] = useState(false);
 
     // this method will increase or decrease count.
-    const handleClick = (type) => {  
+    const handleClick = (type) => { 
+      setError(false); 
       if(type === "add" && initialCount < maxCount){
           const newCount = initialCount + 1;
           setInitialCount(newCount);
@@ -14,7 +15,7 @@ const Counter = ({maxCount = 1000, initial = 1}) => {
         setInitialCount(newCount);
       }
     }
-    
+
     // input handle change will update initial count and set error for max limit.
     const handleChange = (event) => {
       const value = Number(event.target.value);
