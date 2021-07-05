@@ -15,7 +15,7 @@ const Counter = () => {
     const handleChange = (event) => {
       const value = Number(event.target.value);
       const name = event.target.name;
-      if(name === "initialCount" && Number(value))setInitialCount(value);
+      if(name === "initialCount" && Number(value) && !(event.target.value > maxCount))setInitialCount(value);
       if(name === "maxCount") setMaxCount(value);
     }
     return(
@@ -35,9 +35,9 @@ const Counter = () => {
                     increase
                 </button>
            </div>
-           {initialCount > maxCount ? 
+           {initialCount >= maxCount ? 
            <p className="error-msg">
-              Note: Initial count can not be greater than max count please reset value
+              Note: Initial count can not be greater than maximum count, you can increase maximum count.
            </p> : null}
         </div>
         </> 
