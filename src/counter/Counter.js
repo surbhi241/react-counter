@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { AddIcon, DeleteIcon } from "../Icons";
 const Counter = () => {
     const [initialCount, setInitialCount] = useState(0);
     const [maxCount, setMaxCount] = useState(1000);
@@ -18,6 +18,8 @@ const Counter = () => {
       if(name === "initialCount" && Number(value) && !(event.target.value > maxCount))setInitialCount(value);
       if(name === "maxCount") setMaxCount(value);
     }
+
+    const color = "#A54946";
     return(
         <>
         <div className="div-counter-wrapper">
@@ -28,11 +30,11 @@ const Counter = () => {
             </div>
             <div className="counter-container">
                 <button className="btn-count-right" onClick={() => handleClick("subtract")} disabled={initialCount <= 1}>
-                    decrease
+                    <DeleteIcon color={color}/>
                 </button>
                 <input className="input-count" type="text" value={initialCount} onChange={handleChange} name="initialCount" placeholder="add initial counter value"/>
                 <button className="btn-count-left" onClick={() => handleClick("add")} disabled={initialCount >= maxCount}>
-                    increase
+                    <AddIcon color={color}/>
                 </button>
            </div>
            {initialCount >= maxCount ? 
